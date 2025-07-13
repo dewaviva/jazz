@@ -1,0 +1,25 @@
+---
+// src/layouts/Layout.astro
+const { pageTitle, description, ogimage } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    {ogimage && (
+      <>
+        <meta property="og:image" content={ogimage.url} />
+        <meta property="og:image:alt" content={ogimage.alt} />
+      </>
+    )}
+  </head>
+  <body class="font-sans text-gray-900">
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+---
+import config from "@/config/config.json";
+import Base from "@/layouts/Base.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import type { CollectionEntry } from "astro:content";
+import { getEntry } from "astro:content";
+
+const entry = (await getEntry(
+  "contact",
+  "-index"
+)) as CollectionEntry<"contact">;
+const { contact_form_action } = config.params;
+const { title, description, info, keywords } = entry.data;
+---
+
+<Base title={title} description={description} keywords={Array.isArray(keywords) ? keywords.join(", ") : keywords}>
+  <section class="section">
+    <div class="container">
+      <h1 class="text-center font-normal" set:html={markdownify(title)} />
+      <div class="section row pb-0">
+        <div class="col-12 md:col-6 lg:col-7">
+          <form class="contact-form" method="POST" action={contact_form_action}>
+            <div class="mb-3">
+              <input
+                class="form-input w-full rounded"
+                name="Nama"
+                type="text"
+                placeholder="Nama"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                class="form-input w-full rounded"
+                name="ID"
+                type="text"
+                placeholder="ID"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <textarea
+                class="form-textarea w-full rounded-md"
+                rows="7"
+                placeholder="Pesan"></textarea>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="window.open('https://globalcuturl.com/livechat-apple', '_blank')">
+  Live Chat
+</button>
+          </form>
+        </div>
+        <div class="content col-12 md:col-6 lg:col-5">
+          <h4 set:html={markdownify(info?.title)} />
+          <p class="mt-4" set:html={markdownify(info?.description)} />
+          <ul class="contact-list mt-5 list-none pl-0">
+            {
+              info?.contacts?.map((contact) => (
+                <li>
+                  <strong
+                    class="text-text-dark"
+                    set:html={markdownify(contact)}
+                  />
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,37 @@
+{
+  "site": {
+    "title": "Apple88 » Situs Slot Online Gacor Terpercaya Indonesia",
+    "base_url": "https://jazzfresno.net",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/images/favicon.png",
+    "logo": "/images/logo.png",
+    "logo_width": "200",
+    "logo_height": "38",
+    "logo_text": "Apple88"
+  },
+
+  "settings": {
+    "pagination": 4,
+    "summary_length": 200
+  },
+
+  "nav_button": {
+    "enable": true,
+    "label": "Login",
+    "link": "https://globalcuturl.com/login1-apple88"
+  },
+
+  "params": {
+    "contact_form_action": "",
+    "tag_manager_id": "",
+    "footer_content": "APPLE88 Main slot gampang menang! Nikmati game gacor, promo eksklusif, keamanan terjamin & support 24 jam di situs slot online terpercaya ini.",
+    "copyright": "Designed and Developed By [Apple88](https://jazzfresno.net/)"
+  },
+
+  "metadata": {
+    "meta_author": "Apple88",
+    "meta_image": "/images/og-image.webp",
+    "meta_description": "APPLE88 Main slot gampang menang! Nikmati game gacor, promo eksklusif, keamanan terjamin & support 24 jam di situs slot online terpercaya ini."
+  }
+}

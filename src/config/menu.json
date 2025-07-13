@@ -1,0 +1,65 @@
+{
+  "main": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    },
+    {
+      "name": "FAQ",
+      "url": "/faq"
+    }
+  ],
+  "footer": [
+    {
+      "name": "Company",
+      "menu": [
+        {
+          "text": "About Us",
+          "url": "/contact"
+        },
+        {
+          "text": "Quick Start",
+          "url": "/"
+        }
+      ]
+    },
+    {
+      "name": "Product",
+      "menu": [
+        {
+          "text": "Fitur Unggulan Apple88",
+          "url": "/#fitur-unggulan-apple88"
+        },
+        {
+          "text": "Service Apple88",
+          "url": "/#Service-Apple88"
+        },
+        {
+          "text": "Pilhan Permainan",
+          "url": "/#Pilhan-Permainan"
+        }
+      ]
+    },
+    {
+      "name": "Support",
+      "menu": [
+        {
+          "text": "FAQ",
+          "url": "/faq"
+        },
+        {
+          "text": "Privacy Policy",
+          "url": "/privacy-policy"
+        },
+        {
+          "text": "Terms & Conditions",
+          "url": "/terms-conditions"
+        }
+      ]
+    }
+  ]
+}

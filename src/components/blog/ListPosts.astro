@@ -1,0 +1,36 @@
+---
+// src/components/blog/ListPosts.astro
+const { posts } = Astro.props;
+
+const formatDate = (dateStr) =>
+  new Date(dateStr).toLocaleDateString("id-ID", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
+function stripHTML(html) {
+  return html.replace(/<[^>]+>/g, "").replace(/\n/g, " ").slice(0, 160) + "...";
+}
+---
+
+<div class="grid md:grid-cols-2 gap-6">
+  {posts.map(post => (
+    <article class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100" key={post.id}>
+      <a href={`/blog/${post.slug}`}>
+        <img
+          src={post._embedded?.['wp:featuredmedia']?.[0]?.source_url ?? '/placeholder.jpg'}
+          alt={post.title.rendered}
+          class="w-full h-48 object-cover"
+        />
+      </a>
+      <div class="p-4">
+        <h2 class="text-xl font-bold mb-2 text-gray-800 hover:text-blue-600">
+          <a href={`/blog/${post.slug}`} innerHTML={post.title.rendered}></a>
+        </h2>
+        <p class="text-sm text-gray-500 mb-2">{formatDate(post.date)}</p>
+        <p class="text-gray-700 text-sm">{stripHTML(post.excerpt.rendered)}</p>
+      </div>
+    </article>
+  ))}
+</div>

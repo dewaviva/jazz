@@ -1,0 +1,18 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ListPosts from "../../components/blog/ListPosts.astro";
+import { fetchWordPressPosts } from "../../utils/fetch-wordpress";
+
+const pageTitle = "Blog | WP Jazzfresno";
+const description = "Menampilkan semua artikel dari WordPress wp.jazzfresno.net.";
+
+const posts = await fetchWordPressPosts();
+---
+
+<Layout pageTitle={pageTitle} description={description}>
+  <section class="max-w-screen-md mx-auto px-4 py-10">
+    <h1 class="text-4xl font-bold mb-4">Blog</h1>
+    <p class="mb-10 text-gray-500">Artikel terbaru yang ditarik langsung dari WordPress.</p>
+    <ListPosts {posts} />
+  </section>
+</Layout>
